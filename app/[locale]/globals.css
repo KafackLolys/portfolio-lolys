@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #121e28;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #121e28;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Lufga, sans-serif;
+}
+@font-face {
+  font-family: "Lufga";
+  src: url("/fonts/Lufga-Thin.woff2") format("woff2"),
+       url("/fonts/Lufga-Thin.woff") format("woff"),
+       url("/fonts/Lufga-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("/fonts/Lufga-ExtraLight.woff2") format("woff2"),
+       url("/fonts/Lufga-ExtraLight.woff") format("woff"),
+       url("/fonts/Lufga-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("/fonts/Lufga-Light.woff2") format("woff2"),
+       url("/fonts/Lufga-Light.woff") format("woff"),
+       url("/fonts/Lufga-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("/fonts/Lufga-Regular.woff2") format("woff2"),
+       url("/fonts/Lufga-Regular.woff") format("woff"),
+       url("/fonts/Lufga-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("/fonts/Lufga-Medium.woff2") format("woff2"),
+       url("/fonts/Lufga-Medium.woff") format("woff"),
+       url("/fonts/Lufga-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("/fonts/Lufga-SemiBold.woff2") format("woff2"),
+       url("/fonts/Lufga-SemiBold.woff") format("woff"),
+       url("/fonts/Lufga-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("/fonts/Lufga-Bold.woff2") format("woff2"),
+       url("/fonts/Lufga-Bold.woff") format("woff"),
+       url("/fonts/Lufga-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("/fonts/Lufga-ExtraBold.woff2") format("woff2"),
+       url("/fonts/Lufga-ExtraBold.woff") format("woff"),
+       url("/fonts/Lufga-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("/fonts/Lufga-Black.woff2") format("woff2"),
+       url("/fonts/Lufga-Black.woff") format("woff"),
+       url("/fonts/Lufga-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
