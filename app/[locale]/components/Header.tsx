@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { FaProjectDiagram } from "react-icons/fa";
 import { BsInfoCircleFill } from "react-icons/bs";
 import { BiSolidContact } from "react-icons/bi";
-import { useTranslation } from 'next-i18next';
+import { useI18n } from '@/locales/client';
 import Langue from "./Langue";
 
 const Header: React.FC = () => {
@@ -24,11 +24,11 @@ const Header: React.FC = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  const { t } = useTranslation();
+  const t = useI18n();
   return (
     <header className="w-full">
-      <div className={`w-full max-w-[1468px] flex justify-between items-center py-4 pl-4 pr-4 md:pl-10 md:pr-6 text-gray-200 ${isFixed ? 'fixed top-0 left-0 z-50 bg-[#00000053] backdrop-blur-lg rounded-b-xl' : ''}`}>
-        <a href="#home" className="font-semibold text-xl hover:text-white transition duration-300">Tech KLC</a>
+      <div className={`w-full container mx-auto flex justify-between items-center py-4 pl-4 pr-4 md:pl-10 md:pr-6 text-gray-200 ${isFixed ? 'fixed top-0 left-1/2 -translate-x-1/2 z-50 bg-[#00000053] backdrop-blur-lg rounded-b-xl' : ''}`}>
+        <a href="#home" className="font-semibold text-xl hover:text-white transition duration-300">Lolys KAFACK</a>
         {/* Menu desktop */}
         <nav className="hidden md:flex gap-x-6">
           <a href="#about" className="flex items-center gap-2 text-[12px] md:text-[16px] font-medium hover:text-white hover:bg-[#f8715b] transition duration-300 p-2 rounded"><BsInfoCircleFill /> {t("about")}</a>
