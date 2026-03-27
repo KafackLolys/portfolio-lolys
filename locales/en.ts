@@ -1,4 +1,3 @@
-// locales/en.ts
 export default {
   "about": "About",
   "hello": "Hello.",
@@ -9,24 +8,34 @@ export default {
   "skills": "Skills",
   "projects": "Projects",
   "projects_description": "Here are some of my projects:",
+  "technologies_used": "Technologies used:",
+  "view_project": "View Project",
   "task_manager": {
     "title": "Task Manager",
     "description": "Web application to manage your daily tasks with an intuitive user interface.",
-    "technologies": "Technologies used: React, Node.js, MongoDB"
+    "techs": "React, Node.js, MongoDB"
   },
   "portfolio": {
     "title": "Personal Portfolio",
     "description": "My own portfolio where I showcase my projects and skills.",
-    "technologies": "Technologies used: HTML, CSS, JavaScript"
+    "techs": "HTML, CSS, JavaScript"
   },
   "blog": {
     "title": "Development Blog",
     "description": "A blog where I share tutorials and articles on web development.",
-    "technologies": "Technologies used: Django, PostgreSQL"
+    "techs": "Django, PostgreSQL"
   },
   "contact": "Contact",
   "contact_name": "Name:",
   "contact_email": "Email:",
   "contact_message": "Message:",
   "send": "Send",
-} as const
+  "email": "Email: lolyskafack@yahoo.com",
+  "home": "Home",
+  "all_rights_reserved": "© 2026 Lolys KAFACK. All rights reserved.",
+  "form": {
+    "server_error": "Server error",
+    "email_sent": "Email sent successfully",
+    "required_fields": "All fields are required"
+  }
+} as const;

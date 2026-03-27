@@ -53,88 +53,97 @@ body {
 }
 @font-face {
   font-family: "Lufga";
-  src: url("/fonts/Lufga-Thin.woff2") format("woff2"),
-       url("/fonts/Lufga-Thin.woff") format("woff"),
-       url("/fonts/Lufga-Thin.ttf") format("truetype");
+  src:
+    url("/fonts/Lufga-Thin.woff2") format("woff2"),
+    url("/fonts/Lufga-Thin.woff") format("woff"),
+    url("/fonts/Lufga-Thin.ttf") format("truetype");
   font-weight: 100;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Lufga";
-  src: url("/fonts/Lufga-ExtraLight.woff2") format("woff2"),
-       url("/fonts/Lufga-ExtraLight.woff") format("woff"),
-       url("/fonts/Lufga-ExtraLight.ttf") format("truetype");
+  src:
+    url("/fonts/Lufga-ExtraLight.woff2") format("woff2"),
+    url("/fonts/Lufga-ExtraLight.woff") format("woff"),
+    url("/fonts/Lufga-ExtraLight.ttf") format("truetype");
   font-weight: 200;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Lufga";
-  src: url("/fonts/Lufga-Light.woff2") format("woff2"),
-       url("/fonts/Lufga-Light.woff") format("woff"),
-       url("/fonts/Lufga-Light.ttf") format("truetype");
+  src:
+    url("/fonts/Lufga-Light.woff2") format("woff2"),
+    url("/fonts/Lufga-Light.woff") format("woff"),
+    url("/fonts/Lufga-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Lufga";
-  src: url("/fonts/Lufga-Regular.woff2") format("woff2"),
-       url("/fonts/Lufga-Regular.woff") format("woff"),
-       url("/fonts/Lufga-Regular.ttf") format("truetype");
+  src:
+    url("/fonts/Lufga-Regular.woff2") format("woff2"),
+    url("/fonts/Lufga-Regular.woff") format("woff"),
+    url("/fonts/Lufga-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Lufga";
-  src: url("/fonts/Lufga-Medium.woff2") format("woff2"),
-       url("/fonts/Lufga-Medium.woff") format("woff"),
-       url("/fonts/Lufga-Medium.ttf") format("truetype");
+  src:
+    url("/fonts/Lufga-Medium.woff2") format("woff2"),
+    url("/fonts/Lufga-Medium.woff") format("woff"),
+    url("/fonts/Lufga-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Lufga";
-  src: url("/fonts/Lufga-SemiBold.woff2") format("woff2"),
-       url("/fonts/Lufga-SemiBold.woff") format("woff"),
-       url("/fonts/Lufga-SemiBold.ttf") format("truetype");
+  src:
+    url("/fonts/Lufga-SemiBold.woff2") format("woff2"),
+    url("/fonts/Lufga-SemiBold.woff") format("woff"),
+    url("/fonts/Lufga-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Lufga";
-  src: url("/fonts/Lufga-Bold.woff2") format("woff2"),
-       url("/fonts/Lufga-Bold.woff") format("woff"),
-       url("/fonts/Lufga-Bold.ttf") format("truetype");
+  src:
+    url("/fonts/Lufga-Bold.woff2") format("woff2"),
+    url("/fonts/Lufga-Bold.woff") format("woff"),
+    url("/fonts/Lufga-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Lufga";
-  src: url("/fonts/Lufga-ExtraBold.woff2") format("woff2"),
-       url("/fonts/Lufga-ExtraBold.woff") format("woff"),
-       url("/fonts/Lufga-ExtraBold.ttf") format("truetype");
+  src:
+    url("/fonts/Lufga-ExtraBold.woff2") format("woff2"),
+    url("/fonts/Lufga-ExtraBold.woff") format("woff"),
+    url("/fonts/Lufga-ExtraBold.ttf") format("truetype");
   font-weight: 800;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Lufga";
-  src: url("/fonts/Lufga-Black.woff2") format("woff2"),
-       url("/fonts/Lufga-Black.woff") format("woff"),
-       url("/fonts/Lufga-Black.ttf") format("truetype");
+  src:
+    url("/fonts/Lufga-Black.woff2") format("woff2"),
+    url("/fonts/Lufga-Black.woff") format("woff"),
+    url("/fonts/Lufga-Black.ttf") format("truetype");
   font-weight: 900;
   font-style: normal;
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(1 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -168,8 +177,8 @@ body {
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
+  --background: oklch(0.985 0 0);
+  --foreground: oklch(0.145 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
@@ -206,9 +215,16 @@ body {
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    background-color: #0f172a;
+    color: #ffffec;
   }
   html {
     @apply font-sans;
+  }
+}
+
+@layer utilities {
+  .container-padding {
+    @apply px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16; /* padding horizontal responsive */
   }
 }

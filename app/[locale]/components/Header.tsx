@@ -31,9 +31,9 @@ const Header: React.FC = () => {
         <a href="#home" className="font-semibold text-xl hover:text-white transition duration-300">Lolys KAFACK</a>
         {/* Menu desktop */}
         <nav className="hidden md:flex gap-x-6">
-          <a href="#about" className="flex items-center gap-2 text-[12px] md:text-[16px] font-medium hover:text-white hover:bg-[#f8715b] transition duration-300 p-2 rounded"><BsInfoCircleFill /> {t("about")}</a>
-          <a href="#projects" className="flex items-center gap-2 text-[12px] md:text-[16px] font-medium hover:text-white hover:bg-[#f8715b] transition duration-300 p-2 rounded"><FaProjectDiagram /> {t("projects")}</a>
-          <a href="#contact" className="flex items-center gap-2 text-[12px] md:text-[16px] font-medium hover:text-white hover:bg-[#f8715b] transition duration-300 p-2 rounded"><BiSolidContact /> {t("contact")}</a>
+          <a href="#about" className="flex items-center gap-2 text-[12px] md:text-[16px] font-medium hover:text-white hover:bg-[#f8715b] transition duration-300 p-2 rounded whitespace-nowrap"><BsInfoCircleFill /> {t("about")}</a>
+          <a href="#projects" className="flex items-center gap-2 text-[12px] md:text-[16px] font-medium hover:text-white hover:bg-[#f8715b] transition duration-300 p-2 rounded whitespace-nowrap"><FaProjectDiagram /> {t("projects")}</a>
+          <a href="#contact" className="flex items-center gap-2 text-[12px] md:text-[16px] font-medium hover:text-white hover:bg-[#f8715b] transition duration-300 p-2 rounded whitespace-nowrap"><BiSolidContact /> {t("contact")}</a>
           <Langue />
         </nav>
         {/* Menu mobile hamburger */}
@@ -69,8 +69,8 @@ const Header: React.FC = () => {
               <a href="#about" onClick={() => setMenuOpen(false)} className="flex items-center gap-2 font-medium hover:text-[#f8715b] transition"><BsInfoCircleFill /> {t("about")}</a>
               <a href="#projects" onClick={() => setMenuOpen(false)} className="flex items-center gap-2 font-medium hover:text-[#f8715b] transition"><FaProjectDiagram /> {t("projects")}</a>
               <a href="#contact" onClick={() => setMenuOpen(false)} className="flex items-center gap-2 font-medium hover:text-[#f8715b] transition"><BiSolidContact /> {t("contact")}</a>
-              <div className="flex justify-center"><Langue /></div>
-            </nav>
+              <Langue />
+              </nav>
           </aside>
         </div>
     </header>
