@@ -13,17 +13,17 @@ export default {
   "task_manager": {
     "title": "Task Manager",
     "description": "Web application to manage your daily tasks with an intuitive user interface.",
-    "techs": "React, Node.js, MongoDB"
+    "techs": "React, TypeScript, TailwindCSS"
   },
   "portfolio": {
     "title": "Personal Portfolio",
     "description": "My own portfolio where I showcase my projects and skills.",
-    "techs": "HTML, CSS, JavaScript"
+    "techs": "Next js, TypeScript, TailwindCSS"
   },
   "blog": {
     "title": "Development Blog",
     "description": "A blog where I share tutorials and articles on web development.",
-    "techs": "Django, PostgreSQL"
+    "techs": "Next js, Typescript, TailwindCSS"
   },
   "contact": "Contact",
   "contact_name": "Name:",

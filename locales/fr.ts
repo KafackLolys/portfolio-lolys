@@ -13,17 +13,17 @@ export default {
   "task_manager": {
     "title": "Gestionnaire de Tâches",
     "description": "Application web pour gérer vos tâches quotidiennes, avec une interface utilisateur intuitive.",
-    "techs": "React, Node.js, MongoDB"
+    "techs": "React, Typescript, TailwindCSS"
   },
   "portfolio": {
     "title": "Portfolio Personnel",
     "description": "Mon propre portfolio où je présente mes projets et compétences.",
-    "techs": "HTML, CSS, JavaScript"
+    "techs": "Next js, TypeScript, TailwindCSS"
   },
   "blog": {
     "title": "Blog de Développement",
     "description": "Un blog où je partage des tutoriels et articles sur le développement web.",
-    "techs": "Django, PostgreSQL"
+    "techs": "Next js, Typescript, TailwindCSS"
   },
   "contact": "Contact",
   "contact_name": "Nom :",

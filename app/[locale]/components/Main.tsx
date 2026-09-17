@@ -11,7 +11,7 @@ import {
   FaGitAlt,
 } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
-import { SiPhp, SiPostgresql } from "react-icons/si";
+import { SiNestjs, SiPhp, SiPostgresql } from "react-icons/si";
 import { TbBrandMysql } from "react-icons/tb";
 import { getI18n } from "@/locales/serveur";
 import { Contact } from "./contact";
@@ -97,6 +97,11 @@ const Main = async () => {
             />{" "}
             Next JS, <FaLaravel className="ml-2 mr-1" />
             Laravel
+          </li>
+          <li className="flex items-center text-[#D8DBE3]">
+            <FaLaravel />
+            Laravel , <SiNestjs className="ml-2 mr-1" />
+            Nest js
           </li>
           <li className="flex items-center text-[#D8DBE3]">
             <TbBrandMysql className="mr-1" />
