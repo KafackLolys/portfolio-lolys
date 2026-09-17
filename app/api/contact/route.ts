@@ -50,7 +50,7 @@ export async function POST(req: Request) {
     await transporter.sendMail({
       from: `"${name}" <${process.env.GMAIL_SENDER}>`,
       replyTo: email,
-      to: process.env.GMAIL_SENDER,
+      to: process.env.GMAIL_RECIVER,
       subject: `Nouveau message de ${name} (Portfolio)`,
       text: `Nom: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
       html: htmlMessage,
