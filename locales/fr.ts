@@ -1,5 +1,5 @@
-// locales/en.ts
 export default {
+  "about": "À propos",
   "hello": "Bonjour.",
   "name": "Je suis",
   "title": "Développeur Web Full Stack",
@@ -8,20 +8,22 @@ export default {
   "skills": "Compétences",
   "projects": "Projets",
   "projects_description": "Voici quelques-uns de mes projets :",
+  "technologies_used": "Technologies utilisées :",
+  "view_project": "Voir le projet",
   "task_manager": {
     "title": "Gestionnaire de Tâches",
     "description": "Application web pour gérer vos tâches quotidiennes, avec une interface utilisateur intuitive.",
-    "technologies": "Technologies utilisées : React, Node.js, MongoDB"
+    "techs": "React, Typescript, TailwindCSS"
   },
   "portfolio": {
     "title": "Portfolio Personnel",
     "description": "Mon propre portfolio où je présente mes projets et compétences.",
-    "technologies": "Technologies utilisées : HTML, CSS, JavaScript"
+    "techs": "Next js, TypeScript, TailwindCSS"
   },
   "blog": {
     "title": "Blog de Développement",
     "description": "Un blog où je partage des tutoriels et articles sur le développement web.",
-    "technologies": "Technologies utilisées : Django, PostgreSQL"
+    "techs": "Next js, Typescript, TailwindCSS"
   },
   "contact": "Contact",
   "contact_name": "Nom :",
@@ -29,4 +31,11 @@ export default {
   "contact_message": "Message :",
   "send": "Envoyer",
   "email": "Email : lolyskafack@yahoo.com",
-} as const
+  "home": "Accueil",
+  "all_rights_reserved": "© 2026 Lolys KAFACK. Tous droits réservés.",
+  "form": {
+    "server_error": "Erreur serveur",
+    "email_sent": "Email envoyé avec succès",
+    "required_fields": "Tous les champs sont requis"
+  }
+} as const;
