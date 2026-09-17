@@ -95,8 +95,7 @@ const Main = async () => {
               alt="Next JS"
               className="ml-2 w-5 mr-1"
             />{" "}
-            Next JS, <FaLaravel className="ml-2 mr-1" />
-            Laravel
+            Next JS
           </li>
           <li className="flex items-center text-[#D8DBE3]">
             <FaLaravel />
