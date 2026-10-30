@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useWeather } from "@/hooks/use-weather";
@@ -27,10 +26,7 @@ function getWeatherIcon(description: string) {
     return CloudLightning;
   }
 
-  if (
-    text.includes("neige") ||
-    text.includes("snow")
-  ) {
+  if (text.includes("neige") || text.includes("snow")) {
     return CloudSnow;
   }
 
@@ -93,9 +89,7 @@ function WeatherError({ message }: { message: string }) {
           Impossible de récupérer la météo
         </h2>
 
-        <p className="text-sm leading-6 text-slate-400">
-          {message}
-        </p>
+        <p className="text-sm leading-6 text-slate-400">{message}</p>
 
         <button
           onClick={() => window.location.reload()}
@@ -124,9 +118,7 @@ export default function WeatherReportPage() {
     return null;
   }
 
-  const WeatherIcon = getWeatherIcon(
-    weather.description || ""
-  );
+  const WeatherIcon = getWeatherIcon(weather.description || "");
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#07111f] px-4 py-10 text-white sm:px-6 lg:px-8">
@@ -225,9 +217,7 @@ export default function WeatherReportPage() {
           <div className="weather-card group rounded-3xl border border-white/10 bg-white/[0.03] p-6 transition duration-300 hover:-translate-y-1 hover:border-sky-400/30 hover:bg-white/[0.05]">
             <div className="flex items-start justify-between">
               <div>
-                <p className="text-sm font-medium text-slate-400">
-                  Humidité
-                </p>
+                <p className="text-sm font-medium text-slate-400">Humidité</p>
 
                 <div className="mt-4 flex items-baseline gap-1">
                   <span className="text-4xl font-semibold tracking-tight">
@@ -249,7 +239,7 @@ export default function WeatherReportPage() {
                 style={{
                   width: `${Math.min(
                     100,
-                    Math.max(0, Number(weather.humidity) || 0)
+                    Math.max(0, Number(weather.humidity) || 0),
                   )}%`,
                 }}
               />
@@ -273,9 +263,7 @@ export default function WeatherReportPage() {
                     {weather.wind}
                   </span>
 
-                  <span className="text-sm text-slate-400">
-                    m/s
-                  </span>
+                  <span className="text-sm text-slate-400">m/s</span>
                 </div>
               </div>
 
@@ -292,9 +280,7 @@ export default function WeatherReportPage() {
 
         {/* Footer */}
         <footer className="mt-10 text-center">
-          <p className="text-xs text-slate-500">
-            Weather Report · Portfolio
-          </p>
+          <p className="text-xs text-slate-500">Weather Report · Portfolio</p>
         </footer>
       </div>
     </main>
