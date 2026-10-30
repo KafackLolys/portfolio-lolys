@@ -28,15 +28,19 @@ const Langue: React.FC = () => {
           value="fr"
           className="flex items-center justify-between gap-2 w-full h-10"
         >
-            <span>Français</span>
-            <img src="images/fr.png" alt="Français" className="h-5 w-auto ml-auto" />
+          <span>Français</span>
+          <img
+            src="images/fr.png"
+            alt="Français"
+            className="h-5 w-auto ml-auto"
+          />
         </SelectItem>
         <SelectItem
           value="en"
           className="flex items-center justify-between gap-2 w-full h-10"
         >
-            <span>English</span>
-            <img src="images/en.png" alt="English" className="h-5 w-auto" />
+          <span>English</span>
+          <img src="images/en.png" alt="English" className="h-5 w-auto" />
         </SelectItem>
       </SelectContent>
     </Select>

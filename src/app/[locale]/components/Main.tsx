@@ -9,6 +9,7 @@ import {
   FaReact,
   FaLaravel,
   FaGitAlt,
+  FaCloudSun,
 } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
 import { SiNestjs, SiPhp, SiPostgresql } from "react-icons/si";
@@ -16,6 +17,7 @@ import { TbBrandMysql } from "react-icons/tb";
 import { getI18n } from "@/locales/serveur";
 import { Contact } from "./contact";
 import { DiPhotoshop } from "react-icons/di";
+import Link from "next/link";
 const Main = async () => {
   const t = await getI18n();
 
@@ -100,7 +102,7 @@ const Main = async () => {
           <li className="flex items-center text-[#D8DBE3]">
             <FaLaravel />
             Laravel , <SiNestjs className="ml-2 mr-1" />
-            Nest js
+            Nest js, <FaCloudSun className="ml-2 mr-1" /> API REST
           </li>
           <li className="flex items-center text-[#D8DBE3]">
             <TbBrandMysql className="mr-1" />
@@ -178,9 +180,8 @@ const Main = async () => {
               </strong>{" "}
               {t("portfolio.techs")}
             </p>
-            <a
-              href=""
-              target="_blank"
+            <Link
+              href="https://portfolio-lolys-5o7kubh4i-lolys1.vercel.app"
               className="bg-[#f8715b] text-white flex items-center p-2 w-44 justify-center rounded mt-4 hover:bg-[#f8715b] duration-300"
             >
               {t("view_project")}
@@ -197,7 +198,7 @@ const Main = async () => {
                   fill="#ffffff"
                 />
               </svg>
-            </a>
+            </Link>
           </article>
 
           <article className="bg-[#f8705b44] p-5 rounded-lg">
@@ -212,7 +213,7 @@ const Main = async () => {
               {t("blog.techs")}
             </p>
             <a
-              href=""
+              href="/weather-report"
               target="_blank"
               className="bg-[#f8715b] text-white flex items-center p-2 w-44 justify-center rounded mt-4 hover:bg-[#f8715b] duration-300"
             >
