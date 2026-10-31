@@ -1,41 +1,8 @@
+import home from "./fr/home.json";
+import weatherReport from "./fr/weather-report.json";
+import weatherApi from "./fr/weather-api.json";
 export default {
-  "about": "À propos",
-  "hello": "Bonjour.",
-  "name": "Je suis",
-  "title": "Développeur Web Full Stack",
-  "about_me": "À propos de moi",
-  "about_description": "Passionné par le développement web, j'ai acquis des compétences solides en tant que développeur full stack. J'aime créer des applications web interactives et dynamiques qui améliorent l'expérience utilisateur.",
-  "skills": "Compétences",
-  "projects": "Projets",
-  "projects_description": "Voici quelques-uns de mes projets :",
-  "technologies_used": "Technologies utilisées :",
-  "view_project": "Voir le projet",
-  "task_manager": {
-    "title": "Gestionnaire de Tâches",
-    "description": "Application web pour gérer vos tâches quotidiennes, avec une interface utilisateur intuitive.",
-    "techs": "React, Typescript, TailwindCSS"
-  },
-  "portfolio": {
-    "title": "Portfolio Personnel",
-    "description": "Mon propre portfolio où je présente mes projets et compétences.",
-    "techs": "Next js, TypeScript, TailwindCSS"
-  },
-  "blog": {
-    "title": "Blog de Développement",
-    "description": "Un blog où je partage des tutoriels et articles sur le développement web.",
-    "techs": "Next js, Typescript, TailwindCSS"
-  },
-  "contact": "Contact",
-  "contact_name": "Nom :",
-  "contact_email": "Email :",
-  "contact_message": "Message :",
-  "send": "Envoyer",
-  "email": "Email : lolyskafack@yahoo.com",
-  "home": "Accueil",
-  "all_rights_reserved": "© 2026 Lolys KAFACK. Tous droits réservés.",
-  "form": {
-    "server_error": "Erreur serveur",
-    "email_sent": "Email envoyé avec succès",
-    "required_fields": "Tous les champs sont requis"
-  }
+  home,
+  weatherReport,
+  weatherApi
 } as const;

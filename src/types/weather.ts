@@ -1,5 +1,8 @@
 export interface WeatherData {
-  city: string;
+  location: string;
+  countryCode: string;
+  countryName: string;
+  state: string;
   temperature: number;
   description: string;
   humidity: number;

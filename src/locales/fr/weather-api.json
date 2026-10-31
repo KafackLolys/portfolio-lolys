@@ -1,0 +1,20 @@
+
+{
+  "errorsApi": {
+    "invalid_coordinates": "Coordonnées géographiques invalides.",
+    "missing_api_key": "La clé API météo est manquante.",
+    "weather_fetch_failed": "Impossible de récupérer les données météorologiques.",
+    "server_error": "Une erreur interne est survenue. Veuillez réessayer.",
+    "location_not_found": "Impossible de déterminer votre localisation.",
+    "weather_not_found": "Aucune donnée météorologique disponible pour cette localisation.",
+    "geocoding_failed": "Impossible de récupérer les informations géographiques."
+  },
+  "hook": {
+    "geolocation_unsupported": "La géolocalisation n'est pas prise en charge par votre navigateur.",
+    "location_permission_denied": "Vous avez refusé l'autorisation d'accéder à votre position.",
+    "location_unavailable": "Impossible de déterminer votre position actuelle.",
+    "location_timeout": "La récupération de votre position a pris trop de temps.",
+    "weather_fetch_failed": "Impossible de récupérer les données météorologiques.",
+    "unknown_error": "Une erreur inattendue est survenue."
+  }
+}

@@ -1,11 +1,11 @@
 "use client";
 import { FormEvent } from "react";
 import { IoIosMail } from "react-icons/io";
-import { useI18n, useCurrentLocale } from "@/locales/client";
+import { useCurrentLocale, useScopedI18n } from "@/locales/client";
 import toast from "react-hot-toast";
 
 export function Contact() {
-  const t = useI18n();
+  const t = useScopedI18n('home')
   const currentLocale = useCurrentLocale();
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();

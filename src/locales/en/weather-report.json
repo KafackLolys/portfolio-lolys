@@ -1,0 +1,28 @@
+
+{
+  "pageTitle": "Weather Report",
+  "header": {
+    "label": "WEATHER CONDITIONS",
+    "title": "Weather Report",
+    "subtitle": "Check the current weather conditions."
+  },
+  "loading": {
+    "message": "Fetching your weather..."
+  },
+  "error": {
+    "title": "Unable to retrieve the weather",
+    "retry": "Try again"
+  },
+  "weather": {
+    "currentTemperature": "Current temperature",
+    "currentConditions": "Current conditions",
+    "availableData": "Weather data available"
+  },
+  "details": {
+    "humidity": "Humidity",
+    "humidityDescription": "Humidity level in the air",
+    "windSpeed": "Wind speed",
+    "windDescription": "Current wind speed"
+  },
+  "footer": "Weather Report · Portfolio"
+}
