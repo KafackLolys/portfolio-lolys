@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { FaProjectDiagram } from "react-icons/fa";
 import { BsInfoCircleFill } from "react-icons/bs";
 import { BiSolidContact } from "react-icons/bi";
-import { useI18n } from "@/locales/client";
+import { useScopedI18n } from "@/locales/client";
 import Langue from "./Langue";
 
 const Header: React.FC = () => {
@@ -24,7 +24,7 @@ const Header: React.FC = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  const t = useI18n();
+  const t = useScopedI18n('home')
   return (
     <header className="w-full">
       <div

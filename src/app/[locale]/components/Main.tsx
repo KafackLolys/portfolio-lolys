@@ -14,12 +14,12 @@ import {
 import { IoLogoJavascript } from "react-icons/io5";
 import { SiNestjs, SiPhp, SiPostgresql } from "react-icons/si";
 import { TbBrandMysql } from "react-icons/tb";
-import { getI18n } from "@/locales/serveur";
+import { getScopedI18n } from "@/locales/serveur";
 import { Contact } from "./contact";
 import { DiPhotoshop } from "react-icons/di";
 import Link from "next/link";
 const Main = async () => {
-  const t = await getI18n();
+  const t = await getScopedI18n("home");
 
   return (
     <main className="w-full max-w-[1468px] flex flex-col text-gray-200 text-lg">
@@ -138,7 +138,7 @@ const Main = async () => {
             <h3 className="text-lg md:text-2xl font-semibold">
               {t("task_manager.title")}
             </h3>
-            <p className="text-base md:text-lg">
+            <p className="text-base md:text-lg mt-2">
               {t("task_manager.description")}
             </p>
             <p className="mt-2 text-base md:text-lg">
@@ -173,7 +173,7 @@ const Main = async () => {
             <h3 className="text-lg md:text-2xl font-semibold">
               {t("portfolio.title")}
             </h3>
-            <p className="text-base md:text-lg">{t("portfolio.description")}</p>
+            <p className="text-base md:text-lg  mt-2">{t("portfolio.description")}</p>
             <p className="mt-2 text-base md:text-lg">
               <strong className="font-semibold">
                 {t("technologies_used")}
@@ -205,7 +205,7 @@ const Main = async () => {
             <h3 className="text-lg md:text-2xl font-semibold">
               {t("blog.title")}
             </h3>
-            <p className="text-base md:text-lg">{t("blog.description")}</p>
+            <p className="text-base md:text-lg mt-2">{t("blog.description")}</p>
             <p className="mt-2 text-base md:text-lg">
               <strong className="font-semibold">
                 {t("technologies_used")}
@@ -213,7 +213,7 @@ const Main = async () => {
               {t("blog.techs")}
             </p>
             <a
-              href="/weather-report"
+              href=""
               target="_blank"
               className="bg-[#f8715b] text-white flex items-center p-2 w-44 justify-center rounded mt-4 hover:bg-[#f8715b] duration-300"
             >
@@ -232,6 +232,48 @@ const Main = async () => {
                 />
               </svg>
             </a>
+          </article>
+          <article className="bg-[#f8705b44] p-5 rounded-lg">
+            <div className="flex items-center justify-between">
+              <h3 className="text-lg md:text-2xl font-semibold">
+                {t("weather_report.title")}
+              </h3>
+              <div className="shrink-0 size-5 bg-green-400 shadow-[0_0_10px_#0fff50] rounded-full" />
+            </div>
+
+            <p className="text-base md:text-lg mt-2">
+              {t("weather_report.description")}
+            </p>
+
+            <p className="mt-2 text-base md:text-lg">
+              <strong className="font-semibold">
+                {t("technologies_used")}
+              </strong>{" "}
+              {t("weather_report.techs")}
+            </p>
+
+            <Link
+              href="/weather-report"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#f8715b] text-white flex items-center p-2 w-44 justify-center rounded mt-4 hover:bg-[#f8715b] duration-300"
+            >
+              {t("view_project")}
+
+              <svg
+                width="22"
+                height="12"
+                viewBox="0 0 22 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="ml-2 md:ml-3"
+              >
+                <path
+                  d="M21.0303 6.59283C21.3232 6.29994 21.3232 5.82506 21.0303 5.53217L16.2574 0.759199C15.9645 0.466306 15.4896 0.466306 15.1967 0.759199C14.9038 1.05209 14.9038 1.52697 15.1967 1.81986L19.4393 6.0625L15.1967 10.3051C14.9038 10.598 14.9038 11.0729 15.1967 11.3658C15.4896 11.6587 15.4896 11.0729 16.2574 11.3658L16.2574 11.3658L21.0303 6.59283ZM0.5 6.0625V6.8125H20.5V6.0625V5.3125H0.5V6.0625Z"
+                  fill="#ffffff"
+                />
+              </svg>
+            </Link>
           </article>
         </div>
       </section>

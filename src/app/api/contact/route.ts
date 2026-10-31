@@ -14,7 +14,7 @@ export async function POST(req: Request) {
     const body: ContactBody = await req.json();
 
     const { name, email, message, locale = "fr" } = body;
-    const dict = locale === "en" ? enDict : frDict;
+    const dict = locale === "en" ? enDict.home : frDict.home;
 
     if (!name || !email || !message) {
       return Response.json(
@@ -60,7 +60,7 @@ export async function POST(req: Request) {
   } catch (error) {
     // In case we fail before parsing the body or locale fails
     return Response.json(
-      { error: (frDict.form as any).server_error || "Erreur serveur" },
+      { error: frDict.home.form.server_error },
       { status: 500 },
     );
   }

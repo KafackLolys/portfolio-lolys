@@ -1,8 +1,7 @@
-import React from "react";
-import { getI18n } from "@/locales/serveur";
+import { getScopedI18n } from "@/locales/serveur";
 
 const Footer = async () => {
-  const t = await getI18n();
+  const t = await getScopedI18n("home");
   return (
     <footer className="w-full flex flex-col items-center justify-center bg-gray-900 py-6">
       <nav>

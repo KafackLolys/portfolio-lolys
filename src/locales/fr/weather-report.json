@@ -1,0 +1,27 @@
+{
+    "pageTitle": "Bulletin météo",
+    "header": {
+        "label": "CONDITIONS MÉTÉOROLOGIQUES",
+        "title": "Weather Report",
+        "subtitle": "Consultez les conditions météorologiques actuelles."
+    },
+    "loading": {
+        "message": "Récupération de votre météo..."
+    },
+    "error": {
+        "title": "Impossible de récupérer la météo",
+        "retry": "Réessayer"
+    },
+    "weather": {
+        "currentTemperature": "Température actuelle",
+        "currentConditions": "Conditions actuelles",
+        "availableData": "Données météo disponibles"
+    },
+    "details": {
+        "humidity": "Humidité",
+        "humidityDescription": "Taux d'humidité dans l'air",
+        "windSpeed": "Vitesse du vent",
+        "windDescription": "Vitesse actuelle du vent"
+    },
+    "footer": "Weather Report · Portfolio"
+}

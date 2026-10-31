@@ -1,6 +1,7 @@
 "use client";
 
 import { useWeather } from "@/hooks/use-weather";
+import { useScopedI18n } from "@/locales/client";
 import {
   Cloud,
   CloudFog,
@@ -65,7 +66,6 @@ function WeatherLoading() {
     <main className="min-h-screen bg-[#07111f] px-4 py-12 text-white">
       <div className="mx-auto max-w-5xl animate-pulse space-y-6">
         <div className="h-8 w-48 rounded-lg bg-white/10" />
-
         <div className="h-72 rounded-[2rem] bg-white/5" />
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -77,7 +77,15 @@ function WeatherLoading() {
   );
 }
 
-function WeatherError({ message }: { message: string }) {
+function WeatherError({
+  title,
+  message,
+  buttonText,
+}: {
+  title: string;
+  message: string;
+  buttonText: string;
+}) {
   return (
     <main className="flex min-h-screen items-center justify-center bg-[#07111f] px-4 text-white">
       <div className="w-full max-w-md rounded-3xl border border-red-400/20 bg-white/[0.04] p-8 text-center backdrop-blur-xl">
@@ -85,9 +93,7 @@ function WeatherError({ message }: { message: string }) {
           <CloudLightning className="h-8 w-8 text-red-400" />
         </div>
 
-        <h2 className="mb-3 text-xl font-semibold">
-          Impossible de récupérer la météo
-        </h2>
+        <h2 className="mb-3 text-xl font-semibold">{title}</h2>
 
         <p className="text-sm leading-6 text-slate-400">{message}</p>
 
@@ -96,7 +102,7 @@ function WeatherError({ message }: { message: string }) {
           className="mt-6 inline-flex items-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-200"
         >
           <RefreshCw className="h-4 w-4" />
-          Réessayer
+          {buttonText}
         </button>
       </div>
     </main>
@@ -104,6 +110,7 @@ function WeatherError({ message }: { message: string }) {
 }
 
 export default function WeatherReportPage() {
+  const t = useScopedI18n("weatherReport");
   const { weather, loading, error } = useWeather();
 
   if (loading) {
@@ -111,7 +118,13 @@ export default function WeatherReportPage() {
   }
 
   if (error) {
-    return <WeatherError message={error} />;
+    return (
+      <WeatherError
+        title={t("error.title")}
+        message={error}
+        buttonText={t("error.retry")}
+      />
+    );
   }
 
   if (!weather) {
@@ -133,15 +146,15 @@ export default function WeatherReportPage() {
           <div>
             <div className="mb-2 flex items-center gap-2 text-sm font-medium text-sky-400">
               <span className="h-2 w-2 animate-pulse rounded-full bg-sky-400" />
-              CONDITIONS MÉTÉOROLOGIQUES
+              {t("header.label")}
             </div>
 
             <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">
-              Weather Report
+              {t("header.title")}
             </h1>
 
             <p className="mt-2 text-sm text-slate-400">
-              Consultez les conditions météorologiques actuelles.
+              {t("header.subtitle")}
             </p>
           </div>
 
@@ -160,7 +173,11 @@ export default function WeatherReportPage() {
             <div>
               <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-300">
                 <MapPin className="h-4 w-4 text-sky-400" />
-                <span>{weather.city}</span>
+                <span>
+                  {weather.countryName && `${weather.countryName}, `}{" "}
+                  {weather.state && `${weather.state}, `}{" "}
+                  {weather.location && `${weather.location}`}
+                </span>
               </div>
 
               <div className="flex items-start">
@@ -178,7 +195,7 @@ export default function WeatherReportPage() {
               </p>
 
               <p className="mt-2 text-sm text-slate-400">
-                Température actuelle
+                {t("weather.currentTemperature")}
               </p>
             </div>
 
@@ -200,12 +217,12 @@ export default function WeatherReportPage() {
             <div className="flex flex-wrap items-center justify-between gap-4 text-sm text-slate-400">
               <div className="flex items-center gap-2">
                 <Thermometer className="h-4 w-4 text-sky-400" />
-                <span>Conditions actuelles</span>
+                <span>{t("weather.currentConditions")}</span>
               </div>
 
               <div className="flex items-center gap-2">
                 <span className="h-2 w-2 rounded-full bg-emerald-400" />
-                <span>Données météo disponibles</span>
+                <span>{t("weather.availableData")}</span>
               </div>
             </div>
           </div>
@@ -217,7 +234,9 @@ export default function WeatherReportPage() {
           <div className="weather-card group rounded-3xl border border-white/10 bg-white/[0.03] p-6 transition duration-300 hover:-translate-y-1 hover:border-sky-400/30 hover:bg-white/[0.05]">
             <div className="flex items-start justify-between">
               <div>
-                <p className="text-sm font-medium text-slate-400">Humidité</p>
+                <p className="text-sm font-medium text-slate-400">
+                  {t("details.humidity")}
+                </p>
 
                 <div className="mt-4 flex items-baseline gap-1">
                   <span className="text-4xl font-semibold tracking-tight">
@@ -246,7 +265,7 @@ export default function WeatherReportPage() {
             </div>
 
             <p className="mt-3 text-xs text-slate-500">
-              Taux d'humidité dans l'air
+              {t("details.humidityDescription")}
             </p>
           </div>
 
@@ -255,7 +274,7 @@ export default function WeatherReportPage() {
             <div className="flex items-start justify-between">
               <div>
                 <p className="text-sm font-medium text-slate-400">
-                  Vitesse du vent
+                  {t("details.windSpeed")}
                 </p>
 
                 <div className="mt-4 flex items-baseline gap-2">
@@ -273,14 +292,14 @@ export default function WeatherReportPage() {
             </div>
 
             <p className="mt-6 text-xs text-slate-500">
-              Vitesse actuelle du vent
+              {t("details.windDescription")}
             </p>
           </div>
         </section>
 
         {/* Footer */}
         <footer className="mt-10 text-center">
-          <p className="text-xs text-slate-500">Weather Report · Portfolio</p>
+          <p className="text-xs text-slate-500">{t("footer")}</p>
         </footer>
       </div>
     </main>

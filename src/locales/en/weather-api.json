@@ -1,0 +1,20 @@
+
+{
+  "errorsApi": {
+    "invalid_coordinates": "Invalid geographic coordinates.",
+    "missing_api_key": "The weather API key is missing.",
+    "weather_fetch_failed": "Unable to retrieve weather data.",
+    "server_error": "An internal error occurred. Please try again.",
+    "location_not_found": "Unable to determine your location.",
+    "weather_not_found": "No weather data available for this location.",
+    "geocoding_failed": "Unable to retrieve geographic information."
+  },
+  "hook": {
+    "geolocation_unsupported": "Geolocation is not supported by your browser.",
+    "location_permission_denied": "You denied permission to access your location.",
+    "location_unavailable": "Unable to determine your current location.",
+    "location_timeout": "Retrieving your location took too long.",
+    "weather_fetch_failed": "Unable to retrieve weather data.",
+    "unknown_error": "An unexpected error occurred."
+  }
+}

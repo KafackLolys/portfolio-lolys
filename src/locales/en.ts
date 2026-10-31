@@ -1,41 +1,9 @@
+import home from './en/home.json';
+import weatherReport from './en/weather-report.json';
+import weatherApi from "./en/weather-api.json";
+
 export default {
-  "about": "About",
-  "hello": "Hello.",
-  "name": "I am",
-  "title": "Full Stack Web Developer",
-  "about_me": "About Me",
-  "about_description": "Passionate about web development, I have gained solid skills as a full stack developer. I enjoy creating interactive and dynamic web applications that enhance the user experience.",
-  "skills": "Skills",
-  "projects": "Projects",
-  "projects_description": "Here are some of my projects:",
-  "technologies_used": "Technologies used:",
-  "view_project": "View Project",
-  "task_manager": {
-    "title": "Task Manager",
-    "description": "Web application to manage your daily tasks with an intuitive user interface.",
-    "techs": "React, TypeScript, TailwindCSS"
-  },
-  "portfolio": {
-    "title": "Personal Portfolio",
-    "description": "My own portfolio where I showcase my projects and skills.",
-    "techs": "Next js, TypeScript, TailwindCSS"
-  },
-  "blog": {
-    "title": "Development Blog",
-    "description": "A blog where I share tutorials and articles on web development.",
-    "techs": "Next js, Typescript, TailwindCSS"
-  },
-  "contact": "Contact",
-  "contact_name": "Name:",
-  "contact_email": "Email:",
-  "contact_message": "Message:",
-  "send": "Send",
-  "email": "Email: lolyskafack@yahoo.com",
-  "home": "Home",
-  "all_rights_reserved": "© 2026 Lolys KAFACK. All rights reserved.",
-  "form": {
-    "server_error": "Server error",
-    "email_sent": "Email sent successfully",
-    "required_fields": "All fields are required"
-  }
+  home,
+  weatherReport,
+  weatherApi
 } as const;

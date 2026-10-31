@@ -1,10 +1,15 @@
+
 import { NextRequest, NextResponse } from "next/server";
+import enDict from "@/locales/en";
+import frDict from "@/locales/fr";
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
 
   const lat = Number(searchParams.get("lat"));
   const lon = Number(searchParams.get("lon"));
+  const lang = searchParams.get("lang") || "fr";
+  const dict = lang === "fr" ? frDict.weatherApi.errorsApi : enDict.weatherApi.errorsApi;
 
   if (
     !Number.isFinite(lat) ||
@@ -15,7 +20,7 @@ export async function GET(request: NextRequest) {
     lon > 180
   ) {
     return NextResponse.json(
-      { error: "Coordonnées invalides" },
+      { error: dict.invalid_coordinates },
       { status: 400 }
     );
   }
@@ -24,43 +29,65 @@ export async function GET(request: NextRequest) {
 
   if (!apiKey) {
     return NextResponse.json(
-      { error: "Clé API manquante" },
+      { error: dict.missing_api_key },
       { status: 500 }
     );
   }
 
-  const url = new URL(
-    "https://api.openweathermap.org/data/2.5/weather"
-  );
-
-  url.searchParams.set("lat", String(lat));
-  url.searchParams.set("lon", String(lon));
-  url.searchParams.set("appid", apiKey);
-  url.searchParams.set("units", "metric");
-  url.searchParams.set("lang", "fr");
-
   try {
-    const response = await fetch(url.toString());
+    // Weather API
+    const weatherUrl = new URL(
+      "https://api.openweathermap.org/data/2.5/weather"
+    );
 
-    if (!response.ok) {
+    weatherUrl.searchParams.set("lat", String(lat));
+    weatherUrl.searchParams.set("lon", String(lon));
+    weatherUrl.searchParams.set("appid", apiKey);
+    weatherUrl.searchParams.set("units", "metric");
+    weatherUrl.searchParams.set("lang", lang);
+
+    // Reverse Geocoding API
+    const geoUrl = new URL(
+      "https://api.openweathermap.org/geo/1.0/reverse"
+    );
+
+    geoUrl.searchParams.set("lat", String(lat));
+    geoUrl.searchParams.set("lon", String(lon));
+    geoUrl.searchParams.set("limit", "5");
+    geoUrl.searchParams.set("appid", apiKey);
+
+    const [weatherResponse, geoResponse] = await Promise.all([
+      fetch(weatherUrl.toString()),
+      fetch(geoUrl.toString()),
+    ]);
+
+    if (!weatherResponse.ok || !geoResponse.ok) {
       return NextResponse.json(
-        { error: "Erreur lors de la récupération météo" },
+        { error: dict.weather_fetch_failed },
         { status: 502 }
       );
     }
 
-    const data = await response.json();
+    const weatherData = await weatherResponse.json();
+    const geoData = await geoResponse.json();
+    // console.log("weatherData: ", weatherData);
+    // console.log("geoData: ", geoData);
+
+    const location = geoData[0];
 
     return NextResponse.json({
-      city: data.name,
-      temperature: data.main.temp,
-      description: data.weather[0].description,
-      humidity: data.main.humidity,
-      wind: data.wind.speed,
+      location: location?.local_names?.[lang] || location?.name || weatherData.name,
+      countryCode: location?.country || weatherData.sys.country,
+      state: location?.state || null,
+      temperature: weatherData.main.temp,
+      description: weatherData.weather[0].description,
+      humidity: weatherData.main.humidity,
+      wind: weatherData.wind.speed,
     });
+
   } catch {
     return NextResponse.json(
-      { error: "Erreur serveur" },
+      { error: dict.server_error },
       { status: 500 }
     );
   }
